@@ -1,0 +1,10 @@
+# Paquetes descargados por npm (se reinstalan con "npm install")
+node_modules/
+
+# Reservas con datos personales de clientes: NUNCA a GitHub (RGPD)
+data/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+.env

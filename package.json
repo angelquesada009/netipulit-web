@@ -1,0 +1,19 @@
+{
+  "name": "netipulit-web",
+  "version": "1.0.0",
+  "description": "Web de Netipulit, centro de detailing en Terrassa, con servidor de reservas en Node.js",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
