@@ -41,27 +41,10 @@ $("lista-extras").innerHTML = extras.map((e) => `<li><span>${e.nombre}</span><b>
 
 /* ---------- 2. COMPARADOR ANTES / DESPUÉS ---------- */
 
+// El comparador se mueve solo cuando el visitante lo arrastra (nada de animaciones automáticas)
 const panel = $("panel");
 const deslizador = $("pulido");
-const moverPanel = (v) => panel.style.setProperty("--pos", v + "%");
-deslizador.addEventListener("input", () => {
-  panel.classList.remove("intro");
-  moverPanel(deslizador.value);
-});
-
-// Cuando el comparador aparece en pantalla, hace una "pasada de pulido" del 100 % al 50 %
-const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (sinMovimiento || !("IntersectionObserver" in window)) {
-  deslizador.value = 50; moverPanel(50);
-} else {
-  const observador = new IntersectionObserver(([entrada]) => {
-    if (!entrada.isIntersecting) return;
-    panel.classList.add("intro");
-    requestAnimationFrame(() => { deslizador.value = 50; moverPanel(50); });
-    observador.disconnect();
-  }, { threshold: 0.5 });
-  observador.observe(panel);
-}
+deslizador.addEventListener("input", () => panel.style.setProperty("--pos", deslizador.value + "%"));
 
 
 /* ---------- 3. FORMULARIO DE RESERVA ---------- */
@@ -293,6 +276,71 @@ function mostrarConfirmacion(d, respuesta) {
   conf.hidden = false;
   conf.focus();
 }
+
+/* ---------- 4. PUNTOS INTERACTIVOS DEL COCHE ---------- */
+
+// Cada punto apunta a una parte del coche (x, y en % de la foto) y a un servicio del catálogo.
+// El precio sale del catálogo del servidor: si cambias un precio en src/catalogo.js, cambia aquí también.
+const PUNTOS = [
+  { id: "faros", parte: "Faros", x: 9, y: 45, extra: "faros",
+    texto: "Los faros amarillentos o mates restan visibilidad y estética. Los pulimos y sellamos para que vuelvan a ser transparentes." },
+  { id: "llantas", parte: "Llantas", x: 21.5, y: 72, servicio: "exterior",
+    texto: "Llantas, pasos de rueda y neumáticos limpios a mano, sin productos ácidos que dañen el barniz. Incluido en el lavado exterior." },
+  { id: "interior", parte: "Interior", x: 53, y: 25, servicio: "interior",
+    texto: "Aspirado completo, plásticos, salpicadero, cristales y tapicería. Quitamos el polvo de cada rincón." },
+  { id: "pintura", parte: "Pintura", x: 46, y: 56, servicio: "pulido",
+    texto: "Pulimos la pintura para quitar hologramas y micro-arañazos y recuperar el brillo. Con corrección en 2 pasos si hace falta más." },
+  { id: "proteccion", parte: "Protección", x: 78, y: 36, servicio: "ceramico",
+    texto: "Recubrimiento cerámico que repele el agua y la suciedad y protege el barniz durante unos 3 años." }
+];
+
+const iconoMas = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+$("hotspots").innerHTML = PUNTOS.map((p, i) => `
+  <button class="hotspot" type="button" data-id="${p.id}" aria-pressed="false" aria-controls="detalle"
+          style="--x:${p.x}%; --y:${p.y}%; --i:${i}" aria-label="${p.parte}: ver servicio">
+    <span class="dot">${iconoMas}</span><span class="hs-label" aria-hidden="true">${p.parte}</span>
+  </button>`).join("");
+
+function mostrarPunto(id) {
+  const p = PUNTOS.find((x) => x.id === id);
+  const servicio = p.servicio && servicios.find((s) => s.id === p.servicio);
+  const extra = p.extra && extras.find((e) => e.id === p.extra);
+  const nombre = servicio ? servicio.nombre : extra.nombre;
+  const precio = servicio ? servicio.precio : extra.precio;
+  const nota = servicio ? `${servicio.duracion}${servicio.soloTaller ? ", solo en taller" : ", taller o domicilio"}` : "Extra para cualquier servicio";
+  const desde = servicio && ["pulido", "ceramico"].includes(servicio.id) ? "Desde " : "";
+
+  $("detalle").innerHTML = `
+    <div class="detail-card">
+      <div><h2>${nombre}</h2><p>${p.texto}</p></div>
+      <div class="detail-price"><b>${desde}${euros(precio)}</b><span>${nota}</span></div>
+      <button class="btn" type="button" id="btn-elegir">${servicio ? "Reservar este servicio" : "Añadir a mi cita"}</button>
+    </div>`;
+  $("btn-elegir").addEventListener("click", () => elegirEnFormulario(p));
+
+  document.querySelectorAll(".hotspot").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.id === id)));
+}
+
+// Lleva la elección al formulario y baja hasta él
+function elegirEnFormulario(p) {
+  if (p.servicio) selServicio.value = p.servicio;
+  if (p.extra) {
+    const casilla = form.querySelector(`input[name="extras"][value="${p.extra}"]`);
+    if (casilla) casilla.checked = true;
+  }
+  actualizarLugar();
+  actualizarHoras();
+  actualizarPrecio();
+  $("reserva").scrollIntoView({ behavior: sinMovimiento ? "auto" : "smooth" });
+  selServicio.focus({ preventScroll: true });
+}
+
+const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+$("hotspots").addEventListener("click", (e) => {
+  const boton = e.target.closest(".hotspot");
+  if (boton) mostrarPunto(boton.dataset.id);
+});
 
 $("btn-editar").addEventListener("click", () => {
   $("confirmacion").hidden = true;

@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Netipulit · Detailing de coches en Terrassa</title>
   <meta name="description" content="Centro de detailing en Terrassa. Lavado a mano, limpieza interior, pulido, corrección de pintura y tratamiento cerámico, en nuestro taller o a domicilio en recinto privado. Precios con IVA incluido.">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#1f3747">
 
   <!-- Vista previa al compartir el enlace en WhatsApp, LinkedIn, etc. -->
   <meta property="og:title" content="Netipulit · Detailing de coches en Terrassa">
   <meta property="og:description" content="Lavado, pulido y protección cerámica. En nuestro taller o en tu garaje.">
-  <meta property="og:image" content="img/hero.webp">
+  <meta property="og:image" content="img/coche.webp">
   <meta property="og:locale" content="es_ES">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Crect x='6' y='19' width='20' height='5' rx='2.5' fill='%23e3121b'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f3747'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23edff39'/%3E%3C/svg%3E">
 
-  <!-- Optimización: el navegador empieza a descargar lo más importante cuanto antes -->
-  <link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
+  <!-- Optimización: lo más importante se empieza a descargar cuanto antes -->
+  <link rel="preload" href="img/coche.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Datos estructurados para Google (ficha de negocio local) -->
@@ -39,7 +39,7 @@
   <a class="skip" href="#reserva">Ir al formulario de reserva</a>
 
   <header class="site-header">
-    <a class="logo" href="#inicio" aria-label="Netipulit, inicio">netipulit<i aria-hidden="true"></i></a>
+    <a class="logo" href="#inicio" aria-label="Netipulit, inicio"><i aria-hidden="true"></i>Netipulit</a>
     <nav aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#precios">Precios</a>
@@ -51,131 +51,148 @@
 
   <main id="inicio">
 
-    <!-- 1. HERO: foto a sangre, titular grande y una luz de freno roja que se enciende al cargar -->
-    <section class="hero">
-      <img class="hero-img" src="img/hero.webp" width="900" height="1125"
-           alt="Deportivo negro recién pulido bajo los fluorescentes de un taller" fetchpriority="high" decoding="async">
-      <div class="hero-text">
-        <p class="place">Detailing en Terrassa</p>
-        <h1>Que brille como el primer día.</h1>
-        <p class="lead">Lavado a mano, limpieza interior, pulido y protección cerámica. En nuestro taller o en tu garaje.</p>
-        <div class="hero-actions">
+    <!-- 1. ESCENA PRINCIPAL: el coche en un estudio, con puntos que explican cada servicio.
+         Estilo inspirado en la plantilla "Veyra Electric" de MotionSites, adaptado a Netipulit. -->
+    <section class="stage" aria-labelledby="titulo">
+      <div class="stage-head">
+        <h1 id="titulo">Brillo de estudio para tu coche.</h1>
+        <div class="stage-intro">
+          <p>Detailing a mano en Terrassa. En nuestro taller o en tu garaje.</p>
           <a class="btn" href="#reserva">Reservar cita</a>
-          <a class="link" href="#precios">Ver precios</a>
         </div>
-        <ul class="facts">
-          <li><b>Desde 39 €</b> IVA incluido</li>
-          <li><b>24 h</b> para confirmar tu cita</li>
-          <li><b>Taller o domicilio</b> en el Vallès Occidental</li>
-        </ul>
       </div>
-    </section>
 
-    <!-- 2. SERVICIOS EN IMÁGENES -->
-    <section class="section" id="servicios">
-      <div class="section-head">
-        <h2>Lo que hacemos</h2>
-        <p>Cuatro trabajos que cubren casi todo lo que necesita un coche. El detalle de cada uno y los precios, más abajo.</p>
-      </div>
-      <div class="gallery">
-        <a class="tile" href="#precios">
-          <img src="img/lavado.webp" width="520" height="650" loading="lazy" decoding="async" alt="Coche cubierto de espuma durante el prelavado">
-          <span><b>Lavado a mano</b>Espuma, dos cubos y secado sin marcas</span>
-        </a>
-        <a class="tile" href="#precios">
-          <img src="img/interior.webp" width="520" height="650" loading="lazy" decoding="async" alt="Asientos de cuero negro y salpicadero limpios">
-          <span><b>Interior a fondo</b>Tapicería, cuero, plásticos y cristales</span>
-        </a>
-        <a class="tile" href="#precios">
-          <img src="img/pulido.webp" width="520" height="650" loading="lazy" decoding="async" alt="Pulidora roja trabajando sobre un capó negro">
-          <span><b>Pulido y corrección</b>Fuera hologramas y micro-arañazos</span>
-        </a>
-        <a class="tile" href="#precios">
-          <img src="img/llantas.webp" width="520" height="650" loading="lazy" decoding="async" alt="Mano con guante negro limpiando una llanta con un cepillo">
-          <span><b>Llantas y detalles</b>Llantas, pasos de rueda, faros y motor</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- 3. ANTES / DESPUÉS: el comparador sobre una foto real -->
-    <section class="section compare-section">
-      <div class="section-head">
-        <h2>Arrastra y mira la diferencia</h2>
-        <p>La pintura sin cuidar pierde brillo, acumula marcas de agua y micro-arañazos circulares. El pulido los elimina y el cerámico evita que vuelvan.</p>
-      </div>
-      <figure class="panel" id="panel">
-        <img class="photo after" src="img/piloto.webp" width="700" height="875" loading="lazy" decoding="async"
-             alt="Piloto trasero rojo de un coche negro con la pintura brillante">
-        <div class="before" aria-hidden="true">
-          <img class="photo" src="img/piloto.webp" width="700" height="875" loading="lazy" decoding="async" alt="">
-          <svg class="swirls" viewBox="0 0 700 875" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="spots" width="46" height="38" patternUnits="userSpaceOnUse">
-                <circle cx="9" cy="11" r="2.6" fill="rgba(255,255,255,.22)"/>
-                <circle cx="31" cy="27" r="1.7" fill="rgba(255,255,255,.16)"/>
-              </pattern>
-            </defs>
-            <rect width="700" height="875" fill="url(#spots)"/>
-            <g fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.1">
-              <circle cx="420" cy="200" r="40"/><circle cx="420" cy="200" r="70"/><circle cx="420" cy="200" r="104"/>
-              <circle cx="420" cy="200" r="142"/><circle cx="420" cy="200" r="184"/><circle cx="420" cy="200" r="230"/>
-              <circle cx="420" cy="200" r="280"/><circle cx="420" cy="200" r="334"/><circle cx="420" cy="200" r="392"/>
-              <circle cx="420" cy="200" r="454"/><circle cx="420" cy="200" r="520"/><circle cx="420" cy="200" r="590"/>
-            </g>
-          </svg>
+      <figure class="studio" id="studio">
+        <div class="plane">
+          <img class="car" src="img/coche.webp" width="1178" height="350" fetchpriority="high" decoding="async"
+               alt="Deportivo gris plateado visto de lado, con llantas oscuras y pinzas de freno rojas">
+          <!-- Puntos interactivos: su posición es relativa a la foto, no a la pantalla -->
+          <div class="hotspots" id="hotspots" role="group" aria-label="Partes del coche"></div>
         </div>
-        <div class="handle" aria-hidden="true"><span></span></div>
-        <label class="sr-only" for="pulido">Desliza para comparar la pintura antes y después del pulido</label>
-        <input type="range" id="pulido" min="0" max="100" value="100">
-        <figcaption>
-          <span>Antes</span>
-          <span>Después</span>
-        </figcaption>
+        <figcaption class="sr-only">Selecciona una parte del coche para ver el servicio que le corresponde.</figcaption>
       </figure>
-      <p class="note">Recreación ilustrativa del efecto del pulido sobre una misma foto.</p>
+
+      <div class="detail" id="detalle" aria-live="polite">
+        <p class="detail-empty">Toca un punto amarillo del coche para ver qué hacemos en esa parte y cuánto cuesta.</p>
+      </div>
+
+      <ul class="facts">
+        <li><b>Precios cerrados</b><span>Con IVA incluido, desde 39 €</span></li>
+        <li><b>Taller en Terrassa</b><span>Con luz de inspección para pulidos y cerámicos</span></li>
+        <li><b>También a domicilio</b><span>En tu garaje o recinto privado del Vallès</span></li>
+        <li><b>Respuesta en 24 h</b><span>Te confirmamos la cita por teléfono o WhatsApp</span></li>
+      </ul>
+    </section>
+
+    <!-- 2. SERVICIOS EN IMÁGENES (sección clara) -->
+    <section class="band band-light" id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Lo que hacemos</h2>
+          <p>Cuatro trabajos que cubren casi todo lo que necesita un coche. El detalle y los precios, más abajo.</p>
+        </div>
+        <div class="gallery">
+          <a class="tile" href="#precios">
+            <img src="img/lavado.webp" width="520" height="650" loading="lazy" decoding="async" alt="Coche cubierto de espuma durante el prelavado">
+            <b>Lavado a mano</b>
+            <span>Espuma, dos cubos y secado sin marcas</span>
+          </a>
+          <a class="tile" href="#precios">
+            <img src="img/interior.webp" width="520" height="650" loading="lazy" decoding="async" alt="Asientos de cuero negro y salpicadero limpios">
+            <b>Interior a fondo</b>
+            <span>Tapicería, cuero, plásticos y cristales</span>
+          </a>
+          <a class="tile" href="#precios">
+            <img src="img/pulido.webp" width="520" height="650" loading="lazy" decoding="async" alt="Pulidora trabajando sobre un capó negro">
+            <b>Pulido y corrección</b>
+            <span>Fuera hologramas y micro-arañazos</span>
+          </a>
+          <a class="tile" href="#precios">
+            <img src="img/llantas.webp" width="520" height="650" loading="lazy" decoding="async" alt="Mano con guante negro limpiando una llanta con un cepillo">
+            <b>Llantas y detalles</b>
+            <span>Llantas, pasos de rueda, faros y motor</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ANTES / DESPUÉS -->
+    <section class="band band-dark">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Arrastra y compara</h2>
+          <p>La pintura sin cuidar pierde brillo y acumula marcas de agua y micro-arañazos circulares. El pulido los elimina y el cerámico evita que vuelvan.</p>
+        </div>
+        <figure class="compare" id="panel">
+          <img class="photo after" src="img/piloto.webp" width="700" height="875" loading="lazy" decoding="async"
+               alt="Piloto trasero de un coche negro con la pintura brillante">
+          <div class="before" aria-hidden="true">
+            <img class="photo" src="img/piloto.webp" width="700" height="875" loading="lazy" decoding="async" alt="">
+            <svg class="swirls" viewBox="0 0 700 875" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <pattern id="spots" width="46" height="38" patternUnits="userSpaceOnUse">
+                  <circle cx="9" cy="11" r="2.6" fill="rgba(255,255,255,.22)"/>
+                  <circle cx="31" cy="27" r="1.7" fill="rgba(255,255,255,.16)"/>
+                </pattern>
+              </defs>
+              <rect width="700" height="875" fill="url(#spots)"/>
+              <g fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.1">
+                <circle cx="420" cy="200" r="40"/><circle cx="420" cy="200" r="70"/><circle cx="420" cy="200" r="104"/>
+                <circle cx="420" cy="200" r="142"/><circle cx="420" cy="200" r="184"/><circle cx="420" cy="200" r="230"/>
+                <circle cx="420" cy="200" r="280"/><circle cx="420" cy="200" r="334"/><circle cx="420" cy="200" r="392"/>
+                <circle cx="420" cy="200" r="454"/><circle cx="420" cy="200" r="520"/><circle cx="420" cy="200" r="590"/>
+              </g>
+            </svg>
+          </div>
+          <div class="handle" aria-hidden="true"><span></span></div>
+          <label class="sr-only" for="pulido">Desliza para comparar la pintura antes y después del pulido</label>
+          <input type="range" id="pulido" min="0" max="100" value="50">
+          <figcaption><span>Antes</span><span>Después</span></figcaption>
+        </figure>
+        <p class="note">Recreación ilustrativa del efecto del pulido sobre una misma foto.</p>
+      </div>
     </section>
 
     <!-- 4. TALLER O DOMICILIO -->
-    <section class="section" id="modalidad">
-      <div class="section-head">
-        <h2>Tú eliges dónde</h2>
-      </div>
-      <div class="modes">
-        <article>
-          <img src="img/taller.webp" width="800" height="533" loading="lazy" decoding="async" alt="Detailer aplicando producto en el frontal de un coche en el taller">
-          <div>
-            <h3>En nuestro taller</h3>
-            <p>Nave cubierta en Terrassa con luz de inspección. Es el único sitio donde hacemos pulidos y cerámicos: necesitan luz controlada, cero polvo y horas de curado.</p>
-            <ul>
-              <li>Todos los servicios</li>
-              <li>Esperas o lo dejas y lo recoges</li>
-              <li>Sin suplemento</li>
-            </ul>
-          </div>
-        </article>
-        <article>
-          <img src="img/domicilio.webp" width="800" height="533" loading="lazy" decoding="async" alt="Lavado a mano con esponja de un coche cubierto de espuma">
-          <div>
-            <h3>A domicilio, en recinto privado</h3>
-            <p>Vamos con agua, productos y equipo. Solo en espacios <strong>privados y cerrados</strong>: garaje particular, parcela vallada o garaje comunitario con permiso. Nunca en la calle.</p>
-            <ul>
-              <li>Lavados, interior y detailing completo</li>
-              <li>Terrassa +15 €, resto del Vallès Occidental +25 €</li>
-              <li>Necesitamos unos 3 × 6 m libres</li>
-            </ul>
-          </div>
-        </article>
+    <section class="band band-light" id="modalidad">
+      <div class="wrap">
+        <div class="section-head"><h2>Tú eliges dónde</h2></div>
+        <div class="modes">
+          <article>
+            <img src="img/taller.webp" width="800" height="533" loading="lazy" decoding="async" alt="Detailer aplicando protección en el frontal de un coche en el taller">
+            <div>
+              <h3>En nuestro taller</h3>
+              <p>Nave cubierta en Terrassa con luz de inspección. Es el único sitio donde hacemos pulidos y cerámicos: necesitan luz controlada, cero polvo y horas de curado.</p>
+              <ul>
+                <li>Todos los servicios</li>
+                <li>Esperas o lo dejas y lo recoges</li>
+                <li>Sin suplemento</li>
+              </ul>
+            </div>
+          </article>
+          <article>
+            <img src="img/domicilio.webp" width="800" height="533" loading="lazy" decoding="async" alt="Lavado a mano con esponja de un coche cubierto de espuma">
+            <div>
+              <h3>A domicilio, en recinto privado</h3>
+              <p>Vamos con agua, productos y equipo. Solo en espacios <strong>privados y cerrados</strong>: garaje particular, parcela vallada o garaje comunitario con permiso. Nunca en la calle.</p>
+              <ul>
+                <li>Lavados, interior y detailing completo</li>
+                <li>Terrassa +15 €, resto del Vallès Occidental +25 €</li>
+                <li>Necesitamos unos 3 × 6 m libres</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- 5. PRECIOS: la única sección en blanco, para que la información se lea sin esfuerzo -->
-    <section class="prices" id="precios">
-      <div class="prices-inner">
+    <!-- 5. PRECIOS -->
+    <section class="band band-white" id="precios">
+      <div class="wrap">
         <div class="section-head">
           <h2>Precios</h2>
           <p>Precios finales con IVA incluido para turismo (compacto o berlina). SUV, monovolumen o furgoneta: +20 %. Si el coche está muy sucio, te lo decimos antes de empezar.</p>
         </div>
-
         <div class="price-list" role="table" aria-label="Servicios y precios">
           <div class="row head" role="row">
             <span role="columnheader">Servicio</span>
@@ -183,190 +200,197 @@
             <span role="columnheader">Dónde</span>
             <span role="columnheader">Precio</span>
           </div>
-          <!-- Filas generadas desde script.js (lista SERVICIOS): un único sitio para cambiar precios -->
+          <!-- Filas generadas desde el catálogo del servidor (src/catalogo.js) -->
           <div id="filas-servicios"></div>
         </div>
-
         <h3 class="extras-title">Extras</h3>
         <ul class="extras" id="lista-extras"></ul>
       </div>
     </section>
 
-    <!-- 6. PROCESO: secuencia real, por eso va numerada -->
-    <section class="section" id="proceso">
-      <div class="section-head"><h2>Cómo funciona</h2></div>
-      <ol class="steps">
-        <li><strong>Pides cita</strong> con el formulario: servicio, día, hora y lugar.</li>
-        <li><strong>Te confirmamos</strong> por teléfono o WhatsApp en menos de 24 horas laborables.</li>
-        <li><strong>Revisamos el coche contigo</strong> antes de empezar y te avisamos si algo cambia el precio.</li>
-        <li><strong>Pagas al terminar</strong> con tarjeta, Bizum o efectivo. Te damos factura.</li>
-      </ol>
+    <!-- 6. PROCESO: es una secuencia real, por eso va numerada -->
+    <section class="band band-dark" id="proceso">
+      <div class="wrap">
+        <div class="section-head"><h2>Cómo funciona</h2></div>
+        <ol class="steps">
+          <li><strong>Pides cita</strong> con el formulario: servicio, día, hora y lugar.</li>
+          <li><strong>Te confirmamos</strong> por teléfono o WhatsApp en menos de 24 horas laborables.</li>
+          <li><strong>Revisamos el coche contigo</strong> antes de empezar y te avisamos si algo cambia el precio.</li>
+          <li><strong>Pagas al terminar</strong> con tarjeta, Bizum o efectivo. Te damos factura.</li>
+        </ol>
+      </div>
     </section>
 
     <!-- 7. RESERVA -->
-    <section class="section booking" id="reserva">
-      <div class="booking-intro">
-        <h2>Pide tu cita</h2>
-        <p>Elige servicio, lugar, día y hora. Es una solicitud: la cita queda reservada cuando te la confirmamos.</p>
-        <div class="estimate" aria-live="polite">
-          <p>Precio estimado</p>
-          <output id="estimacion">Elige un servicio</output>
-          <small id="estimacion-detalle"></small>
+    <section class="band band-dark booking-band" id="reserva">
+      <div class="wrap booking">
+        <div class="booking-intro">
+          <h2>Pide tu cita</h2>
+          <p>Elige servicio, lugar, día y hora. Es una solicitud: la cita queda reservada cuando te la confirmamos.</p>
+          <div class="estimate" aria-live="polite">
+            <p>Precio estimado</p>
+            <output id="estimacion">Elige un servicio</output>
+            <small id="estimacion-detalle"></small>
+          </div>
         </div>
-      </div>
 
-      <form id="form-reserva" novalidate>
-        <fieldset>
-          <legend>Servicio</legend>
-          <label for="servicio">Servicio principal</label>
-          <select id="servicio" name="servicio" required>
-            <option value="">Elige un servicio</option>
-          </select>
-          <p class="error" id="error-servicio"></p>
-
-          <label for="vehiculo">Tipo de vehículo</label>
-          <select id="vehiculo" name="vehiculo">
-            <option value="turismo">Turismo (compacto o berlina)</option>
-            <option value="grande">SUV, monovolumen o furgoneta (+20 %)</option>
-          </select>
-
-          <p class="label">Extras (opcional)</p>
-          <div class="checks" id="checks-extras"></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Lugar</legend>
-          <div class="choice">
-            <label><input type="radio" name="lugar" value="taller" checked> En el taller de Terrassa</label>
-            <label><input type="radio" name="lugar" value="domicilio"> A domicilio</label>
-          </div>
-          <p class="hint" id="aviso-taller" hidden>Este servicio solo se hace en el taller.</p>
-
-          <div id="bloque-domicilio" hidden>
-            <label for="municipio">Municipio</label>
-            <select id="municipio" name="municipio">
-              <option value="">Elige municipio</option>
+        <form id="form-reserva" novalidate>
+          <fieldset>
+            <legend>Servicio</legend>
+            <label for="servicio">Servicio principal</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Elige un servicio</option>
             </select>
-            <p class="error" id="error-municipio"></p>
+            <p class="error" id="error-servicio"></p>
 
-            <label for="direccion">Dirección</label>
-            <input type="text" id="direccion" name="direccion" autocomplete="street-address">
-            <p class="error" id="error-direccion"></p>
-
-            <label for="recinto">Tipo de espacio</label>
-            <select id="recinto" name="recinto">
-              <option value="">Elige el tipo de espacio</option>
+            <label for="vehiculo">Tipo de vehículo</label>
+            <select id="vehiculo" name="vehiculo">
+              <option value="turismo">Turismo (compacto o berlina)</option>
+              <option value="grande">SUV, monovolumen o furgoneta (+20 %)</option>
             </select>
-            <p class="error" id="error-recinto"></p>
 
-            <label class="check">
-              <input type="checkbox" id="recinto-ok" name="recinto_ok">
-              Confirmo que el coche estará en un recinto privado y cerrado, no en la vía pública, y que tengo permiso para usarlo.
-            </label>
-            <p class="error" id="error-recinto-ok"></p>
-          </div>
-        </fieldset>
+            <p class="label">Extras (opcional)</p>
+            <div class="checks" id="checks-extras"></div>
+          </fieldset>
 
-        <fieldset>
-          <legend>Día y hora</legend>
-          <div class="two">
-            <div>
-              <label for="fecha">Día</label>
-              <input type="date" id="fecha" name="fecha" required>
-              <p class="error" id="error-fecha"></p>
+          <fieldset>
+            <legend>Lugar</legend>
+            <div class="choice">
+              <label><input type="radio" name="lugar" value="taller" checked> En el taller de Terrassa</label>
+              <label><input type="radio" name="lugar" value="domicilio"> A domicilio</label>
             </div>
-            <div>
-              <label for="hora">Hora de llegada</label>
-              <select id="hora" name="hora" required disabled>
-                <option value="">Elige primero el día</option>
+            <p class="hint" id="aviso-taller" hidden>Este servicio solo se hace en el taller.</p>
+
+            <div id="bloque-domicilio" hidden>
+              <label for="municipio">Municipio</label>
+              <select id="municipio" name="municipio">
+                <option value="">Elige municipio</option>
               </select>
-              <p class="error" id="error-hora"></p>
+              <p class="error" id="error-municipio"></p>
+
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" name="direccion" autocomplete="street-address">
+              <p class="error" id="error-direccion"></p>
+
+              <label for="recinto">Tipo de espacio</label>
+              <select id="recinto" name="recinto">
+                <option value="">Elige el tipo de espacio</option>
+              </select>
+              <p class="error" id="error-recinto"></p>
+
+              <label class="check">
+                <input type="checkbox" id="recinto-ok" name="recinto_ok">
+                Confirmo que el coche estará en un recinto privado y cerrado, no en la vía pública, y que tengo permiso para usarlo.
+              </label>
+              <p class="error" id="error-recinto-ok"></p>
             </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Día y hora</legend>
+            <div class="two">
+              <div>
+                <label for="fecha">Día</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <p class="error" id="error-fecha"></p>
+              </div>
+              <div>
+                <label for="hora">Hora de llegada</label>
+                <select id="hora" name="hora" required disabled>
+                  <option value="">Elige primero el día</option>
+                </select>
+                <p class="error" id="error-hora"></p>
+              </div>
+            </div>
+            <p class="hint">Lunes a viernes de 9:00 a 19:00 y sábados de 9:00 a 14:00. Domingos y festivos, cerrado.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tus datos</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+            <p class="error" id="error-nombre"></p>
+
+            <div class="two">
+              <div>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+                <p class="error" id="error-telefono"></p>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <p class="error" id="error-email"></p>
+              </div>
+            </div>
+
+            <label for="comentarios">Comentarios (opcional)</label>
+            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Por ejemplo: manchas en la tapicería del asiento trasero"></textarea>
+          </fieldset>
+
+          <!-- Información básica de protección de datos (art. 13 RGPD). La completa está en legal.html -->
+          <div class="gdpr">
+            <p><strong>Protección de datos.</strong> Responsable: [NOMBRE DEL TITULAR]. Finalidad: gestionar tu solicitud de cita y contactarte sobre ella. Base legal: tu consentimiento y la aplicación de medidas precontractuales. No cedemos tus datos a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, supresión y otros como se explica en la <a href="legal.html#privacidad">política de privacidad</a>.</p>
+            <label class="check">
+              <input type="checkbox" id="privacidad" name="privacidad">
+              He leído la política de privacidad y acepto que traten mis datos para gestionar mi cita.
+            </label>
+            <p class="error" id="error-privacidad"></p>
           </div>
-          <p class="hint">Lunes a viernes de 9:00 a 19:00 y sábados de 9:00 a 14:00. Domingos y festivos, cerrado.</p>
-        </fieldset>
 
-        <fieldset>
-          <legend>Tus datos</legend>
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
-          <p class="error" id="error-nombre"></p>
-
-          <div class="two">
-            <div>
-              <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
-              <p class="error" id="error-telefono"></p>
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
-              <p class="error" id="error-email"></p>
-            </div>
+          <!-- Campo trampa anti-spam: invisible para personas, los robots lo rellenan -->
+          <div class="trampa" aria-hidden="true">
+            <label for="web">No rellenes este campo</label>
+            <input type="text" id="web" name="web" tabindex="-1" autocomplete="off">
           </div>
 
-          <label for="comentarios">Comentarios (opcional)</label>
-          <textarea id="comentarios" name="comentarios" rows="3" placeholder="Por ejemplo: manchas en la tapicería del asiento trasero"></textarea>
-        </fieldset>
+          <p class="error error-general" id="error-general" role="alert"></p>
+          <button class="btn btn-wide" type="submit" id="btn-enviar">Solicitar cita</button>
+        </form>
 
-        <!-- Información básica de protección de datos (art. 13 RGPD). La completa está en legal.html -->
-        <div class="gdpr">
-          <p><strong>Protección de datos.</strong> Responsable: [NOMBRE DEL TITULAR]. Finalidad: gestionar tu solicitud de cita y contactarte sobre ella. Base legal: tu consentimiento y la aplicación de medidas precontractuales. No cedemos tus datos a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, supresión y otros como se explica en la <a href="legal.html#privacidad">política de privacidad</a>.</p>
-          <label class="check">
-            <input type="checkbox" id="privacidad" name="privacidad">
-            He leído la política de privacidad y acepto que traten mis datos para gestionar mi cita.
-          </label>
-          <p class="error" id="error-privacidad"></p>
+        <div class="confirmation" id="confirmacion" hidden tabindex="-1">
+          <h3>Solicitud enviada</h3>
+          <p>Número de solicitud: <strong id="num-solicitud"></strong>. Te llamaremos o escribiremos en menos de 24 horas laborables para confirmar la cita.</p>
+          <dl id="resumen"></dl>
+          <a class="btn" id="btn-whatsapp" hidden target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <button class="link" type="button" id="btn-editar">Pedir otra cita</button>
         </div>
-
-        <!-- Campo trampa anti-spam: invisible para personas, los robots lo rellenan -->
-        <div class="trampa" aria-hidden="true">
-          <label for="web">No rellenes este campo</label>
-          <input type="text" id="web" name="web" tabindex="-1" autocomplete="off">
-        </div>
-
-        <p class="error error-general" id="error-general" role="alert"></p>
-        <button class="btn btn-wide" type="submit" id="btn-enviar">Solicitar cita</button>
-      </form>
-
-      <div class="confirmation" id="confirmacion" hidden tabindex="-1">
-        <h3>Solicitud enviada</h3>
-        <p>Número de solicitud: <strong id="num-solicitud"></strong>. Te llamaremos o escribiremos en menos de 24 horas laborables para confirmar la cita.</p>
-        <dl id="resumen"></dl>
-        <a class="btn" id="btn-whatsapp" hidden target="_blank" rel="noopener">Enviar por WhatsApp</a>
-        <button class="link" type="button" id="btn-editar">Pedir otra cita</button>
       </div>
     </section>
 
     <!-- 8. PREGUNTAS FRECUENTES -->
-    <section class="section" id="preguntas">
-      <div class="section-head"><h2>Preguntas frecuentes</h2></div>
-      <details>
-        <summary>¿Por qué a domicilio solo en un recinto privado y cerrado?</summary>
-        <p>Las ordenanzas municipales prohíben lavar vehículos en la vía pública y verter agua o productos a la calle. Además, un espacio cerrado nos protege del polvo y del sol directo, y el resultado es mejor.</p>
-      </details>
-      <details>
-        <summary>¿Necesito darte agua o electricidad?</summary>
-        <p>Llevamos depósito de agua y técnicas de bajo consumo, y recogemos los residuos. Si hay un enchufe cerca nos viene bien, pero no es imprescindible.</p>
-      </details>
-      <details>
-        <summary>¿Por qué el pulido y el cerámico solo en el taller?</summary>
-        <p>Para corregir la pintura necesitamos luz de inspección y medir el grosor del barniz. El cerámico, además, debe curar sin polvo ni humedad durante varias horas.</p>
-      </details>
-      <details>
-        <summary>¿Puedo cambiar o anular la cita?</summary>
-        <p>Sí, sin coste si nos avisas con al menos 24 horas de antelación.</p>
-      </details>
-      <details>
-        <summary>¿Me atendéis en catalán?</summary>
-        <p>Sí. T'atenem en català o en castellà, com prefereixis.</p>
-      </details>
+    <section class="band band-light" id="preguntas">
+      <div class="wrap">
+        <div class="section-head"><h2>Preguntas frecuentes</h2></div>
+        <div class="faq">
+          <details>
+            <summary>¿Por qué a domicilio solo en un recinto privado y cerrado?</summary>
+            <p>Las ordenanzas municipales prohíben lavar vehículos en la vía pública y verter agua o productos a la calle. Además, un espacio cerrado nos protege del polvo y del sol directo, y el resultado es mejor.</p>
+          </details>
+          <details>
+            <summary>¿Necesito daros agua o electricidad?</summary>
+            <p>Llevamos depósito de agua y técnicas de bajo consumo, y recogemos los residuos. Si hay un enchufe cerca nos viene bien, pero no es imprescindible.</p>
+          </details>
+          <details>
+            <summary>¿Por qué el pulido y el cerámico solo en el taller?</summary>
+            <p>Para corregir la pintura necesitamos luz de inspección y medir el grosor del barniz. El cerámico, además, debe curar sin polvo ni humedad durante varias horas.</p>
+          </details>
+          <details>
+            <summary>¿Puedo cambiar o anular la cita?</summary>
+            <p>Sí, sin coste si nos avisas con al menos 24 horas de antelación.</p>
+          </details>
+          <details>
+            <summary>¿Me atendéis en catalán?</summary>
+            <p>Sí. T'atenem en català o en castellà, com prefereixis.</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div>
-      <p class="logo">netipulit<i aria-hidden="true"></i></p>
+      <p class="logo"><i aria-hidden="true"></i>Netipulit</p>
       <p>[DIRECCIÓN DEL TALLER], 08220 Terrassa (Barcelona)<br>
          Teléfono: [TELÉFONO]<br>Email: [EMAIL]</p>
     </div>
