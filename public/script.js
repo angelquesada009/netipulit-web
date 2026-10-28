@@ -1,7 +1,7 @@
 /* ============================================================
    Netipulit · lógica de la web (lo que corre en el navegador)
    1. Pide el catálogo al servidor y pinta precios y opciones.
-   2. Comparador antes/después.
+   2. (Antes/después ahora es solo HTML y CSS: no necesita código.)
    3. Formulario: precio estimado, horas libres y envío al servidor.
    ============================================================ */
 
@@ -39,15 +39,7 @@ $("filas-servicios").innerHTML = servicios.map((s) => `
 $("lista-extras").innerHTML = extras.map((e) => `<li><span>${e.nombre}</span><b>${euros(e.precio)}</b></li>`).join("");
 
 
-/* ---------- 2. COMPARADOR ANTES / DESPUÉS ---------- */
-
-// El comparador se mueve solo cuando el visitante lo arrastra (nada de animaciones automáticas)
-const panel = $("panel");
-const deslizador = $("pulido");
-deslizador.addEventListener("input", () => panel.style.setProperty("--pos", deslizador.value + "%"));
-
-
-/* ---------- 3. FORMULARIO DE RESERVA ---------- */
+/* ---------- 2. FORMULARIO DE RESERVA ---------- */
 
 const form = $("form-reserva");
 const selServicio = $("servicio");
@@ -282,15 +274,15 @@ function mostrarConfirmacion(d, respuesta) {
 // Cada punto apunta a una parte del coche (x, y en % de la foto) y a un servicio del catálogo.
 // El precio sale del catálogo del servidor: si cambias un precio en src/catalogo.js, cambia aquí también.
 const PUNTOS = [
-  { id: "faros", parte: "Faros", x: 9, y: 45, extra: "faros",
+  { id: "faros", parte: "Faros", x: 90.5, y: 42, extra: "faros",
     texto: "Los faros amarillentos o mates restan visibilidad y estética. Los pulimos y sellamos para que vuelvan a ser transparentes." },
-  { id: "llantas", parte: "Llantas", x: 21.5, y: 72, servicio: "exterior",
+  { id: "llantas", parte: "Llantas", x: 80, y: 71, servicio: "exterior",
     texto: "Llantas, pasos de rueda y neumáticos limpios a mano, sin productos ácidos que dañen el barniz. Incluido en el lavado exterior." },
-  { id: "interior", parte: "Interior", x: 53, y: 25, servicio: "interior",
+  { id: "interior", parte: "Interior", x: 47, y: 22, servicio: "interior",
     texto: "Aspirado completo, plásticos, salpicadero, cristales y tapicería. Quitamos el polvo de cada rincón." },
-  { id: "pintura", parte: "Pintura", x: 46, y: 56, servicio: "pulido",
+  { id: "pintura", parte: "Pintura", x: 52, y: 56, servicio: "pulido",
     texto: "Pulimos la pintura para quitar hologramas y micro-arañazos y recuperar el brillo. Con corrección en 2 pasos si hace falta más." },
-  { id: "proteccion", parte: "Protección", x: 78, y: 36, servicio: "ceramico",
+  { id: "proteccion", parte: "Protección", x: 17, y: 36, servicio: "ceramico",
     texto: "Recubrimiento cerámico que repele el agua y la suciedad y protege el barniz durante unos 3 años." }
 ];
 

@@ -15,10 +15,10 @@ const PUERTO = process.env.PORT || 3000; // en internet, el hosting decide el pu
 // Entiende los datos JSON que envía el formulario (como máximo 20 KB)
 app.use(express.json({ limit: "20kb" }));
 
-// Archivos de la web. Las fotos y fuentes se guardan en caché 7 días en el navegador.
+// Archivos de la web. Las fotos, fuentes y el modelo 3D se guardan en caché 7 días en el navegador.
 app.use(express.static("public", {
   setHeaders(res, ruta) {
-    if (/\.(webp|woff2)$/.test(ruta)) res.setHeader("Cache-Control", "public, max-age=604800");
+    if (/\.(webp|woff2|glb)$/.test(ruta)) res.setHeader("Cache-Control", "public, max-age=604800");
   }
 }));
 
